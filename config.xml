@@ -49,18 +49,18 @@
     <icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
     <icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
 
-    <gap:splash gap:platform="android" gap:qualifier="ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
-    <gap:splash gap:platform="android" gap:qualifier="mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
-    <gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
-    <gap:splash gap:platform="android" gap:qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
+    <gap:splash gap:platform="android" gap:qualifier="ldpi" src="res/screens/android/splashoriginal.png" />
+    <gap:splash gap:platform="android" gap:qualifier="mdpi" src="res/screens/android/splashoriginal.png" />
+    <gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/splashoriginal.png" />
+    <gap:splash gap:platform="android" gap:qualifier="xhdpi" src="res/screens/android/splashoriginal.png" />
 
 
     <gap:splash src="splash.png" />
 
-    <splash src="res/screens/android/screen-ldpi-portrait.png" platform="android" qualifier="ldpi" />
-    <splash src="res/screens/android/screen-mdpi-portrait.png" platform="android" qualifier="mdpi" />
-    <splash src="res/screens/android/screen-hdpi-portrait.png" platform="android" qualifier="hdpi" />
-    <splash src="res/screens/android/screen-xhdpi-portrait.png" platform="android" qualifier="xhdpi" />
+    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="ldpi" />
+    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="mdpi" />
+    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="hdpi" />
+    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="xhdpi" />
     <splash src="splash.png" />
 
 
