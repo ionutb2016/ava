@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+<title>aplicatia de aur</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com http://scripting.work https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' http://code.jquery.com https://cdnjs.cloudflare.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://code.jquery.com http://scripting.work https://cdnjs.cloudflare.com/">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<!-- Latest compiled and minified JavaScript -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>  
+
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
+</head>
+
+<body>
+  <div id="wrapper"> 
+    <div class="container">   
+      <div class="row"> 
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign In</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+                            
+                        <form id="loginform" class="form-horizontal validateDontSubmit" role="form">
+                                    
+                            <div style="margin-bottom: 30px" class="input-field">
+                                        <i class="material-icons prefix glyphicon glyphicon-user"></i>
+                                        <input id="login-username" type="text" class="form-control input-field" name="username" value="" required>
+                                        <label for="login-username">username or email</label>                                       
+                                    </div>
+                                
+                            <div style="margin-bottom: 30px" class="input-field">
+                                        <i class="material-icons prefix glyphicon glyphicon-lock"></i>
+                                        <input id="login-password" type="password" class="form-control input-field" name="password" value="" required>
+                                        <label for="login-password">password</label>
+                                    </div>
+
+                                <div style="margin-top:20px;margin-bottom:35px" class="form-group">
+
+                                    <div class="col-sm-12 controls text-center">
+                                      <input type="hidden" name="action" value="login">
+                                      <button id="btn-login" class="btn btn-default waves-effect waves-light">Login  </button>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:25px; font-size:85%" >
+                                            Don't have an account! 
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Sign Up Here
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+      </div>
+
+        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Sign Up</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal  validateDontSubmit" role="form">
+                                 
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12 input-field">
+                                        <input id="register-email" type="text" class="form-control" name="email"  value="" required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12 input-field">
+                                        <input id="register-firstname" type="text" class="form-control" name="firstname"  value="" required>
+                                        <label for="firstname" >First Name</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12 input-field">
+                                        <input id="register-lastname" type="text" class="form-control" name="lastname"  value="" required>
+                                        <label for="lastname">Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12 input-field">
+                                        <input id="register-password" type="password" class="form-control" name="passwd" value="" required>
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    
+                                    <div class="col-md-12 input-field">
+                                        <input id="register-icode" type="text" class="form-control" name="icode" value="">
+                                        <label for="icode">Invitation Code (optional)</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                        
+                                    <div class="col-md-12">
+                                      <input type="hidden" name="action" value="register">
+                                        <button id="btn-signup" class="btn btn-default waves-effect waves-light col-xs-12 col-md-4"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                        <span class="text-center col-xs-12 col-md-4">or</span>
+                                        <button id="btn-fbsignup" type="button" class="btn btn-default col-xs-12 col-md-4"  onclick="$('#signupbox').hide(); $('#loginbox').show()">Back to login</button>  
+                                    </div>
+                                </div>
+                               
+                            </form>
+                         </div>
+                    </div>
+        </div> 
+        <div id="cursuri" class="row">
+        </div>
+
+
+
+
+    </div><!-- end container -->
+</div><!-- end wrapper -->
+
+
+
+
+<script>
+
+function afiseaza_rezultatele(obiect) {
+  $('#loginbox').hide();
+  $('#signupbox').addClass('hidden');
+
+  
+  $.each(obiect,function(key,value){
+    //console.log(key + "---" + value.clasa);
+    if (key != 0) {
+    var untext = "<div class='grupe col-xs-12 " + value.clasa + "'><div class='row'><div class='textG col-xs-4'>" + value.titlu + "</div><div class='grupetext col-xs-8'><div class='row'><div class=''><span>Data incepere:</span><span class='culoare_curs'>" + value.data_incepere +"</span></div><div class='infoG'>Program: " + value.program + " <br/>Pret: " + value.pret + " lei<br/>Sala de curs: " + value.sala + "</div></div></div></div><div class='row'><div class='locuri_tabel col-xs-8 pull-right'>Mai sunt: " + value.locuri + "</div></div></div>";
+
+    $('#cursuri').append(untext);
+    //console.log(untext);
+    }
+  });
+
+
+  $('#cursuri').fadeIn('slow');
+}
+
+
+
+function ajaxcall(e, datele) {
+    e.preventDefault();
+
+            
+            
+            $.ajax({
+              url: 'http://scripting.work/api/inscrieri_api.php',
+              crossDomain: true,
+              contentType: "application/json",
+              dataType:'jsonp',
+              type: 'GET',
+              jsonp: 'callback',
+              data: datele,
+              success: function(data, textStatus, xhr) {
+                  //alert(data);
+                  
+                  var stringy = JSON.stringify(data);
+                  var obj = jQuery.parseJSON( stringy );
+                  
+                  
+                  if (obj.mesaj == 'gogogo') {
+                    afiseaza_rezultatele(obj);
+                  }
+                  else {
+                    //console.log(obj);
+                    //alert(obj.mesaj);
+                    Materialize.toast(obj.mesaj, 4000) // 4000 is the duration of the toast
+                  }        
+                },
+              complete: function(xhr, textStatus) {
+                    //alert(xhr.status);
+                }, 
+              error: function(err) {
+                alert(err.message);
+              }
+            }); // end ajax call
+}
+
+
+
+
+$(document).ready(function() {
+
+
+      $('#cursuri').hide();
+
+      $(document).on('submit','.validateDontSubmit',function (e) {
+          //prevent the form from doing a submit
+          e.preventDefault();
+          return false;
+      });
+
+
+
+
+
+      $('#btn-login').click(function(e){
+        //Leverage the HTML5 validation w/ ajax. Have to submit to get em. Wont actually submit cuz form
+        //has .validateDontSubmit class
+        var $theForm = $(this).closest('form');
+        //Some browsers don't implement checkValidity
+        if (( typeof($theForm[0].checkValidity) == "function" ) && !$theForm[0].checkValidity()) {
+
+           return;
+        } else {
+        //here comes ajax call and answer*/
+              var actiunea = $theForm.find('input[name=action]').val();
+              var userul = $('#login-username').val();
+              var passul = $('#login-password').val();
+
+              var data = {'actiunea': actiunea, 'username': userul, 'password': passul};
+              ajaxcall(e, data);
+          }
+
+      });
+
+      $('#btn-signup').click(function(e){
+        //Leverage the HTML5 validation w/ ajax. Have to submit to get em. Wont actually submit cuz form
+        //has .validateDontSubmit class
+        var $theForm = $(this).closest('form');
+        //Some browsers don't implement checkValidity
+        if (( typeof($theForm[0].checkValidity) == "function" ) && !$theForm[0].checkValidity()) {
+
+           return;
+        } else {
+        //here comes ajax call and answer*/
+              var actiunea = $theForm.find('input[name=action]').val();
+              var email = $('#register-email').val();
+              var firstname = $('#register-firstname').val();
+              var lastname = $('#register-lastname').val();
+              var passwd = $('#register-passwd').val();
+              var icode = $('#register-icode').val();
+
+              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode};
+              ajaxcall(e, data);
+          }
+
+      });
+
+
+
+
+    
+
+});
+
+
+
+
+</script>
+</body>
+</html>
