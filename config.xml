@@ -55,13 +55,18 @@
     <icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
     <icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
 
-
+<gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
 <gap:splash gap:platform="android" gap:qualifier="ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
 <gap:splash gap:platform="android" gap:qualifier="mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
-<gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
 <gap:splash gap:platform="android" gap:qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
 
-
+<platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="res/screens/android/screen-hdpi-portrait.png" density="port-hdpi"/>
+    <splash src="res/screens/android/screen-ldpi-portrait.png" density="port-ldpi"/>
+    <splash src="res/screens/android/screen-mdpi-portrait.png" density="port-mdpi"/>
+    <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi"/>
+</platform>
 
 
 
