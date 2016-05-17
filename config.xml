@@ -22,6 +22,7 @@
 
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="org.apache.cordova.device" spec="0.2.3" source="pgb" />
+    <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
 
     <allow-navigation href="http://scripting.work/api/*" />
     <allow-navigation href="http://code.jquery.com/*" />
@@ -29,18 +30,14 @@
     <access origin="*" />
 
     
-
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
-    <preference name="AutoHideSplashScreen" value="false" />  
-    <preference name="SplashScreenDelay" value="5000" /> 
-    <preference name="ShowSplashScreenSpinner" value="false" />  
-    <preference name="FadeSplashScreen" value="true" />  
-    <preference name="FadeSplashScreenDuration" value="1.0" />  
-    <preference name="SplashScreen" value="screen" />
+ 
+    <preference name="SplashScreenDelay" value="10000" /> 
+    <preference name="SplashScreen" value="splashoriginal" />
 
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
+    
 
     <icon gap:platform="android" gap:qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
@@ -49,19 +46,18 @@
     <icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
     <icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
 
-    <gap:splash gap:platform="android" gap:qualifier="ldpi" src="res/screens/android/splashoriginal.png" />
-    <gap:splash gap:platform="android" gap:qualifier="mdpi" src="res/screens/android/splashoriginal.png" />
-    <gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/splashoriginal.png" />
-    <gap:splash gap:platform="android" gap:qualifier="xhdpi" src="res/screens/android/splashoriginal.png" />
 
 
-    <gap:splash src="splash.png" />
-
-    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="ldpi" />
-    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="mdpi" />
-    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="hdpi" />
-    <splash src="res/screens/android/splashoriginal.png" platform="android" qualifier="xhdpi" />
-    <splash src="splash.png" />
+    <platform name="android">
+        <splash src="res/screens/android/splashoriginal.png" density="land-hdpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="land-ldpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="land-mdpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="land-xhdpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="port-hdpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="port-ldpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="port-mdpi"/>
+        <splash src="res/screens/android/splashoriginal.png" density="port-xhdpi"/>
+    </platform>
 
 
 </widget>
