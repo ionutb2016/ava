@@ -30,6 +30,7 @@
 
 
 
+    <allow-navigation href="http://avantajconsulting.ro/*" />
     <allow-navigation href="http://scripting.work/api/*" />
     <allow-navigation href="http://code.jquery.com/*" />
     <allow-navigation href="https://cdnjs.cloudflare.com/*" />
