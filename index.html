@@ -283,7 +283,31 @@ $(document).ready(function() {
 });
 
 
+document.addEventListener("deviceready",onDeviceReady,false);
+function onDeviceReady(){
+Materialize.toast("Device Ready")
+var push = PushNotification.init({ "android": {"senderID": "AIzaSyAqGOVWO6Mt6LnQ_OvAlul6D5t_FolDjJI"},
+"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
+push.on('registration', function(data) {
+console.log(data.registrationId);
+Materialize.toast(data.registrationId, 4000);
+});
+
+push.on('notification', function(data) {
+console.log(data.message);
+alert(data.title+" Message: " +data.message);
+// data.title,
+// data.count,
+// data.sound,
+// data.image,
+// data.additionalData
+});
+
+push.on('error', function(e) {
+Materialize.toast(e.message);
+});
+}
 
 </script>
 </body>
