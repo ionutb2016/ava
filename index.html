@@ -286,7 +286,7 @@ $(document).ready(function() {
 document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady(){
 Materialize.toast("Device Ready")
-var push = PushNotification.init({ "android": {"senderID": "AIzaSyAqGOVWO6Mt6LnQ_OvAlul6D5t_FolDjJI"},
+var push = PushNotification.init({ "android": {"senderID": "avantajnotifications"},
 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 push.on('registration', function(data) {
