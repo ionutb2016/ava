@@ -190,7 +190,7 @@ function ajaxcall(e, datele) {
               jsonp: 'callback',
               data: datele,
               success: function(data, textStatus, xhr) {
-                  //alert(data);
+                  alert(data);
                   
                   var stringy = JSON.stringify(data);
                   var obj = jQuery.parseJSON( stringy );
@@ -201,12 +201,12 @@ function ajaxcall(e, datele) {
                   }
                   else {
                     //console.log(obj);
-                    //alert(obj.mesaj);
+                    alert(obj.mesaj);
                     Materialize.toast(obj.mesaj, 4000) // 4000 is the duration of the toast
                   }        
                 },
               complete: function(xhr, textStatus) {
-                    //alert(xhr.status);
+                    alert(xhr.status);
                 }, 
               error: function(err) {
                 alert(err.message);
@@ -285,13 +285,13 @@ $(document).ready(function() {
 
 document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady(){
-Materialize.toast("Device Ready")
+//Materialize.toast("Device Ready");
 var push = PushNotification.init({ "android": {"senderID": "440522947236"},
 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 push.on('registration', function(data) {
 console.log(data.registrationId);
-Materialize.toast(data.registrationId, 54000);
+//Materialize.toast(data.registrationId, 54000);
 });
 
 push.on('notification', function(data) {
@@ -305,7 +305,7 @@ alert(data.title+" Message: " +data.message);
 });
 
 push.on('error', function(e) {
-Materialize.toast(e.message);
+//Materialize.toast(e.message);
 });
 }
 
