@@ -131,6 +131,7 @@
                                         
                                     <div class="col-md-12">
                                       <input type="hidden" name="action" value="register">
+                                      <input type="hidden" name="regkey" value="">
                                         <button id="btn-signup" class="btn btn-default waves-effect waves-light col-xs-12 col-md-4"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
                                         <span class="text-center col-xs-12 col-md-4">or</span>
                                         <button id="btn-fbsignup" type="button" class="btn btn-default col-xs-12 col-md-4"  onclick="$('#signupbox').hide(); $('#loginbox').show()">Back to login</button>  
@@ -164,7 +165,7 @@ var push = PushNotification.init({ "android": {"senderID": "440522947236"},
 push.on('registration', function(data) {
 //console.log(data.registrationId);
 //Materialize.toast(data.registrationId, 54000);
-var registrationID = data.registrationId;
+jQuery('input[name=regkey]').val(data.registrationId);
 });
 
 push.on('notification', function(data) {
@@ -296,8 +297,9 @@ $(document).ready(function() {
               var lastname = $('#register-lastname').val();
               var passwd = $('#register-password').val();
               var icode = $('#register-icode').val();
+              var registrationid = $theForm.find('input[name=regkey]').val();
 
-              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'registrationid': registrationID};
+              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'registrationid': registrationid};
               ajaxcall(e, data);
           }
 
