@@ -299,6 +299,7 @@ $(document).ready(function() {
               var passwd = $('#register-password').val();
               var icode = $('#register-icode').val();
               var registrationid = $theForm.find('input[name=regkey]').val();
+              registrationid = 'mos';
               alert(cevreitu);
               alert(registrationid);
               var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'registrationid': registrationid};
