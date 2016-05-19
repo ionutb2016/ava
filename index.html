@@ -155,7 +155,7 @@
 
 
 <script>
-var cevreitu = 0;
+
 document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady(){
 //Materialize.toast("Device Ready");
@@ -163,14 +163,13 @@ var push = PushNotification.init({ "android": {"senderID": "440522947236"},
 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 push.on('registration', function(data) {
-console.log(data.registrationId);
-Materialize.toast(data.registrationId, 54000);
+//console.log(data.registrationId);
+//Materialize.toast(data.registrationId, 54000);
 jQuery('input[name=regkey]').val(data.registrationId);
-cevreitu = data.registrationId;
 });
 
 push.on('notification', function(data) {
-console.log(data.message);
+//console.log(data.message);
 alert(data.title+" Message: " +data.message);
 // data.title,
 // data.count,
@@ -299,10 +298,8 @@ $(document).ready(function() {
               var passwd = $('#register-password').val();
               var icode = $('#register-icode').val();
               var registrationid = $theForm.find('input[name=regkey]').val();
-              registrationid = 'mos';
-              alert(cevreitu);
-              alert(registrationid);
-              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'registrationid': registrationid};
+
+              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'regkey': registrationid};
               ajaxcall(e, data);
           }
 
