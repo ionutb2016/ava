@@ -4,7 +4,7 @@
 <title>aplicatia de aur</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com http://scripting.work http://avantajconsulting.ro https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' http://code.jquery.com https://cdnjs.cloudflare.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://code.jquery.com http://scripting.work http://avantajconsulting.ro https://cdnjs.cloudflare.com/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' http://code.jquery.com https://cdnjs.cloudflare.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/">
 
 
 <!-- Latest compiled and minified CSS -->
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="signupbox" style="display:none; margin-top:50px;margin-bottom:100px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title">Sign Up</div>
@@ -155,6 +155,34 @@
 
 <script>
 
+document.addEventListener("deviceready",onDeviceReady,false);
+function onDeviceReady(){
+//Materialize.toast("Device Ready");
+var push = PushNotification.init({ "android": {"senderID": "440522947236"},
+"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+
+push.on('registration', function(data) {
+//console.log(data.registrationId);
+//Materialize.toast(data.registrationId, 54000);
+var registrationID = data.registrationId;
+});
+
+push.on('notification', function(data) {
+console.log(data.message);
+alert(data.title+" Message: " +data.message);
+// data.title,
+// data.count,
+// data.sound,
+// data.image,
+// data.additionalData
+});
+
+push.on('error', function(e) {
+//Materialize.toast(e.message);
+});
+}
+
+
 function afiseaza_rezultatele(obiect) {
   $('#loginbox').hide();
   $('#signupbox').addClass('hidden');
@@ -182,7 +210,7 @@ function ajaxcall(e, datele) {
             
             
             $.ajax({
-              url: 'http://avantajconsulting.ro/api/inscrieri_api.php',
+              url: 'http://scripting.work/api/inscrieri_api.php',
               crossDomain: true,
               contentType: "application/json",
               dataType:'jsonp',
@@ -190,7 +218,7 @@ function ajaxcall(e, datele) {
               jsonp: 'callback',
               data: datele,
               success: function(data, textStatus, xhr) {
-                  alert(data);
+                  //alert(data);
                   
                   var stringy = JSON.stringify(data);
                   var obj = jQuery.parseJSON( stringy );
@@ -201,12 +229,12 @@ function ajaxcall(e, datele) {
                   }
                   else {
                     //console.log(obj);
-                    alert(obj.mesaj);
+                    //alert(obj.mesaj);
                     Materialize.toast(obj.mesaj, 4000) // 4000 is the duration of the toast
                   }        
                 },
               complete: function(xhr, textStatus) {
-                    alert(xhr.status);
+                    //alert(xhr.status);
                 }, 
               error: function(err) {
                 alert(err.message);
@@ -266,10 +294,10 @@ $(document).ready(function() {
               var email = $('#register-email').val();
               var firstname = $('#register-firstname').val();
               var lastname = $('#register-lastname').val();
-              var passwd = $('#register-passwd').val();
+              var passwd = $('#register-password').val();
               var icode = $('#register-icode').val();
 
-              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode};
+              var data = {'actiunea': actiunea, 'email': email, 'firstname': firstname, 'lastname': lastname, 'parola': passwd, 'codul': icode, 'registrationid': registrationID};
               ajaxcall(e, data);
           }
 
@@ -283,31 +311,7 @@ $(document).ready(function() {
 });
 
 
-document.addEventListener("deviceready",onDeviceReady,false);
-function onDeviceReady(){
-//Materialize.toast("Device Ready");
-var push = PushNotification.init({ "android": {"senderID": "440522947236"},
-"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-push.on('registration', function(data) {
-console.log(data.registrationId);
-//Materialize.toast(data.registrationId, 54000);
-});
-
-push.on('notification', function(data) {
-console.log(data.message);
-alert(data.title+" Message: " +data.message);
-// data.title,
-// data.count,
-// data.sound,
-// data.image,
-// data.additionalData
-});
-
-push.on('error', function(e) {
-//Materialize.toast(e.message);
-});
-}
 
 </script>
 </body>
