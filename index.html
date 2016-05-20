@@ -81,7 +81,7 @@
               <li><a class="btn-floating btn-large red waves-effect waves-light"><i class="glyphicon glyphicon-home"></i></a></li>
               <li><a class="btn-floating btn-large yellow waves-effect waves-light"><i class="glyphicon glyphicon-map-marker"></i></a></li>
               <li><a class="btn-floating btn-large green waves-effect waves-light"><i class="glyphicon glyphicon-heart-empty"></i></a></li>
-              <li><a class="btn-floating btn-large blue waves-effect waves-light" onclick="exitFromApp()"><i class="glyphicon glyphicon-off"></i></a></li>
+              <li><a class="btn-floating btn-large blue waves-effect waves-light" id="exitApp"><i class="glyphicon glyphicon-off"></i></a></li>
             </ul>
           
           </div>
@@ -210,9 +210,18 @@ $(document).ready(function(){
 
 $('#wrapper').hide();
 
+function checkConnection() {
+    var networkState = navigator.connection.type;
+   if(navigator.connection.type == Connection.NONE) {        
+    alert("No network connection");
+}
+}
+
 
 document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady(){
+checkConnection() ;
+
 //Materialize.toast("Device Ready");
 var push = PushNotification.init({ "android": {"senderID": "440522947236"},
 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
@@ -236,13 +245,16 @@ alert(data.title+" Message: " +data.message);
 push.on('error', function(e) {
 //Materialize.toast(e.message);
 });
+
+
+// alert("deviceready");
+document.getElementById('exitApp').addEventListener('click', function() {
+    navigator.app.exitApp();
+});
 }
 
 
-function exitFromApp()
-             {
-                navigator.app.exitApp();
-             }
+
 
 
 function afiseaza_rezultatele(obiect) {
