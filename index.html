@@ -4,12 +4,12 @@
 <title>aplicatia de aur</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' http://code.jquery.com https://cdnjs.cloudflare.com/; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' http://code.jquery.com https://cdnjs.cloudflare.com/ ; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://code.jquery.com http://scripting.work http://www.avantajconsulting.ro https://cdnjs.cloudflare.com/ ; img-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+
 <!-- Latest compiled and minified JavaScript -->
 
 <script src="js/jquery.min.js"></script>
@@ -21,22 +21,85 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-<script type="text/javascript" src="phonegap.js"></script>
+<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div id="wrapper"> 
-    <div class="container">   
-      <div class="row"> 
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-            <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Sign In</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-                    </div>     
+<div id="wrap">
+  <div class="slider fullscreen ">
+    <ul class="slides">
+      <li>
+        <img src="images/4.jpg">
+        <div class="caption center-align">         
+          <h3 class="fancy-title">AVANTAJ CONSULTING</h3>
+          <div class="fancy-slider-info center-align"> din 2004 </div>
+          <h5 class="light grey-text text-lighten-3">Centrul de Excelenta in IT</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/5.jpg">
+        <div class="caption center-align">          
+          <h3 class="fancy-title">AVANTAJ CONSULTING</h3>
+          <div class="fancy-slider-info center-align"> din 2004 </div>
+          <h5 class="light grey-text text-lighten-3">Centrul de Excelenta in IT</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/6.jpg">
+        <div class="caption center-align">          
+          <h3 class="fancy-title">AVANTAJ CONSULTING</h3>
+          <div class="fancy-slider-info center-align"> din 2004 </div>
+          <h5 class="light grey-text text-lighten-3">Centrul de Excelenta in IT</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-                    <div style="padding-top:30px" class="panel-body" >
-                            
+<div class="container">   
+  <div class="row"> 
+    <div id="cursuri" class="row"></div>
+  </div>
+</div><!-- end container -->
+
+<footer class="footer">
+      <div class="container">
+        <div class="row nomargin">
+        <div class="col-xs-4 text-center buttons">
+          <a class="btn-floating btn-large  waves-effect waves-light red" data-toggle="modal" data-target="#loginModal"><i class="glyphicon glyphicon-log-in"></i>
+          
+          </a>     
+        </div>
+        <div class="col-xs-4 text-center buttons">
+          <a class="btn-floating btn-large  waves-effect waves-light red"><i class="glyphicon glyphicon-tasks"></i>
+          
+          </a>
+        </div>
+        <div class="col-xs-4 text-center buttons">
+          <div class="fixed-action-btn click-to-toggle">
+          <a class="btn-floating btn-large  waves-effect waves-light red"><i class="glyphicon glyphicon-option-vertical"></i></a>
+            <ul>
+              <li><a class="btn-floating btn-large red waves-effect waves-light"><i class="glyphicon glyphicon-home"></i></a></li>
+              <li><a class="btn-floating btn-large yellow waves-effect waves-light"><i class="glyphicon glyphicon-map-marker"></i></a></li>
+              <li><a class="btn-floating btn-large green waves-effect waves-light"><i class="glyphicon glyphicon-heart-empty"></i></a></li>
+              <li><a class="btn-floating btn-large blue waves-effect waves-light" onclick="exitFromApp()"><i class="glyphicon glyphicon-off"></i></a></li>
+            </ul>
+          
+          </div>
+        </div>
+      </div>
+      </div>
+    </footer>
+</div>
+
+
+<!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+          <div class="container">
+            <div class="row">
+              <div id="loginbox" class="col-xs-12">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+                        <br>
+                        <h5 style="border-bottom: 1px solid#888; padding-bottom:10px;margin-bottom:25px; "> Sign In</h5>   
                         <form id="loginform" class="form-horizontal validateDontSubmit" role="form">
                                     
                             <div style="margin-bottom: 30px" class="input-field">
@@ -73,20 +136,11 @@
                                 </div>    
                             </form>     
 
-
-
-                        </div>                     
-                    </div>  
-        </div>
-      </div>
-
-        <div id="signupbox" style="display:none; margin-top:50px;margin-bottom:100px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div class="panel-title">Sign Up</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
-                        </div>  
-                        <div class="panel-body" >
+              </div>
+              <div id="signupbox" class="col-xs-12">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+                            <br>
+                          <h5 style="border-bottom: 1px solid#888; padding-bottom:10px;margin-bottom:25px; "> Sign Up</h5>
                             <form id="signupform" class="form-horizontal  validateDontSubmit" role="form">
                                  
                                 <div class="form-group">
@@ -139,22 +193,23 @@
                                 </div>
                                
                             </form>
-                         </div>
-                    </div>
-        </div> 
-        <div id="cursuri" class="row">
+
+              </div> 
+            </div>
+          </div>
         </div>
 
 
-
-
-    </div><!-- end container -->
-</div><!-- end wrapper -->
-
-
-
-
 <script>
+
+$(document).ready(function(){
+      $('.slider').slider({indicators: false});
+      $('.slider img').attr('src','images/spacer.png');
+    });
+
+
+$('#wrapper').hide();
+
 
 document.addEventListener("deviceready",onDeviceReady,false);
 function onDeviceReady(){
@@ -184,9 +239,19 @@ push.on('error', function(e) {
 }
 
 
+function exitFromApp()
+             {
+                navigator.app.exitApp();
+             }
+
+
 function afiseaza_rezultatele(obiect) {
+  $( ".close" ).trigger( "click" );
+  $('.slider').slider('pause');
+  $('.slider').hide();
   $('#loginbox').hide();
-  $('#signupbox').addClass('hidden');
+  $('#signupbox').hide();
+  $('#cursuri').show();
 
   
   $.each(obiect,function(key,value){
@@ -226,6 +291,7 @@ function ajaxcall(e, datele) {
                   
                   
                   if (obj.mesaj == 'gogogo') {
+
                     afiseaza_rezultatele(obj);
                   }
                   else {
@@ -250,6 +316,7 @@ $(document).ready(function() {
 
 
       $('#cursuri').hide();
+      $('#signupbox').hide();
 
       $(document).on('submit','.validateDontSubmit',function (e) {
           //prevent the form from doing a submit

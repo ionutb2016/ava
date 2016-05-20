@@ -175,3 +175,136 @@
               border-bottom: 2px dotted #cccccc;
               margin-top: 10px;
        }
+
+.modal-open #wrap {
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+  
+.modal-backdrop {background-color: #f7f7f7;}
+
+.close {
+    font-size: 50px;
+    display:block;
+}
+.modal {
+    border:1px solid black;
+    border-radius:10px;}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(215,215,215,0.8);
+  height: 80px;
+  z-index:99;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+
+.buttons {
+  line-height: 80px;
+}
+
+/*.slider ul li img{
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+}*/
+
+.slider .slides li .caption  {
+  font-family: open sans;
+  color: #fff !important;
+  text-shadow: 0px 0px 15px #000;
+  top: 10%;
+  left: 10%;
+  width:80% !important;
+}
+.slider .slides li .caption h3  {
+  
+}
+
+.slider .slides li .caption .fancy-title  {
+  font-family: open sans;
+  color: #fff !important;
+  text-shadow: 0px 0px 10px #000;
+  padding: 15px 10px;
+  border: 1px solid #fff;
+  font-size:1.5rem !important;
+  letter-spacing:-1px;
+  text-align: center;
+}
+.fancy-slider-info:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.fancy-slider-info:before, .fancy-slider-info:after {
+    content: "";
+    height: 5px;
+    border-top: 1px dotted #efefef;
+    top: 19px;
+    border-width: 2px;
+    width: 50px;
+    position: absolute;
+}
+.fancy-slider-info:after {
+    margin-left:15px;
+}
+.fancy-slider-info {
+    line-height: 40px;
+    color: #f00;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    width:40%;
+}
+
+
+.grey-text.text-lighten-3 {
+    color: #eee !important;
+    text-shadow: 0px 0px 15px #000;
+    font-size: 1.5rem !important;
+}
+
+.fixed-action-btn {
+  bottom: 0 !important;
+  position: static !important;
+  right: 0 !important;
+  padding-top:0  !important;
+}
+.nomargin {
+  margin:0 !important;
+}
